@@ -114,6 +114,7 @@ class ViewController: UIViewController {
                                         y: view.bounds.minY - 100,
                                         width: 80,
                                         height: 60)
+        imageObstruction.dropShadow()
         view.addSubview(imageObstruction)
         
         imageObstruction2.image = UIImage(named: "stone")
@@ -121,6 +122,7 @@ class ViewController: UIViewController {
                                          y: view.bounds.minY - 100,
                                          width: 70,
                                          height: 55)
+        imageObstruction2.dropShadow()
         view.addSubview(imageObstruction2)
         
         imageObstruction3.image = UIImage(named: "stone")
@@ -128,6 +130,7 @@ class ViewController: UIViewController {
                                          y: view.bounds.minY - 100,
                                          width: 60,
                                          height: 50)
+        imageObstruction3.dropShadow()
         view.addSubview(imageObstruction3)
         
         
@@ -185,6 +188,7 @@ class ViewController: UIViewController {
                                     y: view.bounds.maxY - 150,
                                     width: view.bounds.maxX / vehicleWidthProportion,
                                     height: view.bounds.maxX / vehicleWidthProportion * vehicleCrossProportion)
+        
         view.addSubview(imageVehicle)
         
     }

@@ -15,25 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="a5p-yu-TEI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sv7-0P-J31">
-                                <rect key="frame" x="134.5" y="417.5" width="145" height="61"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="START">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onStartButton:" destination="iOZ-Q2-Z20" eventType="touchUpInside" id="Etu-aZ-kqZ"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bpb-5v-Joi"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CmQ-8f-6Jh"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                        <constraints>
-                            <constraint firstItem="Sv7-0P-J31" firstAttribute="centerX" secondItem="a5p-yu-TEI" secondAttribute="centerX" id="Vv0-p3-ZH3"/>
-                            <constraint firstItem="Sv7-0P-J31" firstAttribute="centerY" secondItem="a5p-yu-TEI" secondAttribute="centerY" id="vuX-u9-P8h"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQx-1b-pmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

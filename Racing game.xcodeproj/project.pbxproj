@@ -16,6 +16,8 @@
 		F74D19D427E5D61700CA1B91 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D19D327E5D61700CA1B91 /* StartScreen.swift */; };
 		F7A0EC37280D9F11001B3D8A /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A0EC36280D9F11001B3D8A /* UIColor+HEX.swift */; };
 		F7A0EC39280D9FD8001B3D8A /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A0EC38280D9FD8001B3D8A /* UIView+Utilities.swift */; };
+		F7C38797280EBD5200A17675 /* Bicubik.OTF in Resources */ = {isa = PBXBuildFile; fileRef = F7C38796280EBD5200A17675 /* Bicubik.OTF */; };
+		F7C3879B280EC79300A17675 /* Dosis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7C3879A280EC79300A17675 /* Dosis.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F74D19D327E5D61700CA1B91 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		F7A0EC36280D9F11001B3D8A /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		F7A0EC38280D9FD8001B3D8A /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
+		F7C38796280EBD5200A17675 /* Bicubik.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bicubik.OTF; sourceTree = "<group>"; };
+		F7C3879A280EC79300A17675 /* Dosis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dosis.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +73,21 @@
 				F74D19D327E5D61700CA1B91 /* StartScreen.swift */,
 				F7A0EC36280D9F11001B3D8A /* UIColor+HEX.swift */,
 				F7A0EC38280D9FD8001B3D8A /* UIView+Utilities.swift */,
+				F7C38795280EBCF300A17675 /* Resources */,
 				F74D19C627E48A3700CA1B91 /* Assets.xcassets */,
 				F74D19C827E48A3700CA1B91 /* LaunchScreen.storyboard */,
 				F74D19CB27E48A3700CA1B91 /* Info.plist */,
 			);
 			path = "Racing game";
+			sourceTree = "<group>";
+		};
+		F7C38795280EBCF300A17675 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7C3879A280EC79300A17675 /* Dosis.ttf */,
+				F7C38796280EBD5200A17675 /* Bicubik.OTF */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +148,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C3879B280EC79300A17675 /* Dosis.ttf in Resources */,
 				F74D19CA27E48A3700CA1B91 /* LaunchScreen.storyboard in Resources */,
 				F74D19C727E48A3700CA1B91 /* Assets.xcassets in Resources */,
 				F74D19C527E48A3600CA1B91 /* Main.storyboard in Resources */,
+				F7C38797280EBD5200A17675 /* Bicubik.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
