@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  Racing game
-//
-//  Created by Aliaksandr Miatnikau on 18.03.22.
-//
+
 
 import UIKit
 
