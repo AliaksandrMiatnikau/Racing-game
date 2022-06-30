@@ -12,7 +12,7 @@
 "Highscores" = "Рекорды";
 
 //game over alert
-"GAME OVER" = "АВАРИЯ";
+"GAME OVER" = "КОНЕЦ ИГРЫ";
 "Your result: " = "Результат: ";
 "Time " = "Время ";
 ", Distance " = ", Дистанция ";
