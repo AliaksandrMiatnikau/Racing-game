@@ -37,8 +37,9 @@ class ViewController: UIViewController {
     private var boom = UIImageView()
     
     
-    private var buttonLeft = UIButton()
-    private var buttonRight = UIButton()
+    private let buttonLeft = UIButton()
+    private let buttonRight = UIButton()
+    private let menuButton = UIButton()
     
     private var timerObstruction: Timer?
     private var timerObstruction2: Timer?
@@ -199,6 +200,21 @@ class ViewController: UIViewController {
         buttonRight.backgroundColor = .clear
         buttonRight.addTarget(self, action: #selector(moveCarRight), for: .touchUpInside)
         view.addSubview(buttonRight)
+        
+        menuButton.frame = CGRect(x: 20, y: 40, width: view.bounds.maxY / 10, height: view.bounds.maxX / 10)
+        menuButton.backgroundColor = .clear
+        menuButton.rounded(radius: 10)
+        menuButton.titleLabel?.font = UIFont(name: "Dosis", size: 20)
+        menuButton.setTitle("Menu".localized(), for: .normal)
+        menuButton.setTitleColor(.black, for: .normal)
+        menuButton.addTarget(self, action: #selector(backToMenu), for: .touchUpInside)
+        view.addSubview(menuButton)
+        
+        
+       
+        
+     
+
         
         
         imageVehicle.frame = CGRect(x: view.bounds.midX - 30,
@@ -402,6 +418,13 @@ class ViewController: UIViewController {
         } completion: { _ in
             self.showAlert(title: "GAME OVER".localized(), text: "Your result: ".localized() + "Time ".localized() + result.time + ", Distance ".localized() + String(result.distance))
         }
+    }
+    
+    @objc private func backToMenu () {
+        let vc = StartScreen()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true)
     }
     
     @objc private func viewRoadAnimation () {
