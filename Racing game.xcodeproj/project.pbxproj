@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F740F942281C180D00B3506F /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = F740F941281C180D00B3506F /* Results.swift */; };
+		F71DF531284C884B0038696F /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71DF530284C884B0038696F /* HighscoresViewController.swift */; };
+		F71DF533284C88810038696F /* HighscoresViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71DF532284C88810038696F /* HighscoresViewController.storyboard */; };
+		F71DF535284C8D5E0038696F /* HighscoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71DF534284C8D5E0038696F /* HighscoresTableViewCell.swift */; };
 		F74D19BE27E48A3600CA1B91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D19BD27E48A3600CA1B91 /* AppDelegate.swift */; };
 		F74D19C027E48A3600CA1B91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D19BF27E48A3600CA1B91 /* SceneDelegate.swift */; };
 		F74D19C227E48A3600CA1B91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D19C127E48A3600CA1B91 /* ViewController.swift */; };
@@ -15,16 +17,28 @@
 		F74D19C727E48A3700CA1B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74D19C627E48A3700CA1B91 /* Assets.xcassets */; };
 		F74D19CA27E48A3700CA1B91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74D19C827E48A3700CA1B91 /* LaunchScreen.storyboard */; };
 		F74D19D427E5D61700CA1B91 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D19D327E5D61700CA1B91 /* StartScreen.swift */; };
+		F755502628651A2200908CF8 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F755502528651A2200908CF8 /* UIViewController+Alerts.swift */; };
 		F796B986281812B0004E4975 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796B985281812B0004E4975 /* SettingsViewController.swift */; };
-		F796B98828181BD7004E4975 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F796B98728181BD7004E4975 /* SettingsViewController.storyboard */; };
+		F7990756286B0B84007A4260 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7990758286B0B84007A4260 /* Localizable.strings */; };
+		F799075A286B0BAA007A4260 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F799075C286B0BAA007A4260 /* SettingsViewController.storyboard */; };
+		F79B90A90541837C487EB794 /* Pods_Racing_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF7D2ACE4800D0ED502F932 /* Pods_Racing_game.framework */; };
 		F7A0EC37280D9F11001B3D8A /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A0EC36280D9F11001B3D8A /* UIColor+HEX.swift */; };
 		F7A0EC39280D9FD8001B3D8A /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A0EC38280D9FD8001B3D8A /* UIView+Utilities.swift */; };
+		F7C0867828607A8500A0BD28 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0867728607A8500A0BD28 /* RealmManager.swift */; };
+		F7C0867A28607A9000A0BD28 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0867928607A9000A0BD28 /* RealmObjects.swift */; };
 		F7C38797280EBD5200A17675 /* Bicubik.OTF in Resources */ = {isa = PBXBuildFile; fileRef = F7C38796280EBD5200A17675 /* Bicubik.OTF */; };
 		F7C3879B280EC79300A17675 /* Dosis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7C3879A280EC79300A17675 /* Dosis.ttf */; };
+		F7C540AE286C47330085D151 /* GameScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C540AD286C47330085D151 /* GameScreen.storyboard */; };
+		F7D9B08F286A498D004847BD /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D9B08E286A498D004847BD /* String+Localizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F740F941281C180D00B3506F /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		15B4C69D693B7BF68D0CCE01 /* Pods-Racing game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racing game.release.xcconfig"; path = "Target Support Files/Pods-Racing game/Pods-Racing game.release.xcconfig"; sourceTree = "<group>"; };
+		A55A996F473161F81C172752 /* Pods-Racing game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racing game.debug.xcconfig"; path = "Target Support Files/Pods-Racing game/Pods-Racing game.debug.xcconfig"; sourceTree = "<group>"; };
+		AFF7D2ACE4800D0ED502F932 /* Pods_Racing_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racing_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71DF530284C884B0038696F /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
+		F71DF532284C88810038696F /* HighscoresViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HighscoresViewController.storyboard; sourceTree = "<group>"; };
+		F71DF534284C8D5E0038696F /* HighscoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresTableViewCell.swift; sourceTree = "<group>"; };
 		F74D19BA27E48A3600CA1B91 /* Racing game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racing game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74D19BD27E48A3600CA1B91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74D19BF27E48A3600CA1B91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,12 +48,21 @@
 		F74D19C927E48A3700CA1B91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F74D19CB27E48A3700CA1B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F74D19D327E5D61700CA1B91 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		F755502528651A2200908CF8 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		F796B985281812B0004E4975 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		F796B98728181BD7004E4975 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		F7990757286B0B84007A4260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F7990759286B0B9A007A4260 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F799075B286B0BAA007A4260 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/SettingsViewController.storyboard; sourceTree = "<group>"; };
+		F79DC49F286B0D81003BAE40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsViewController.storyboard; sourceTree = "<group>"; };
+		F79DC4A2286B0FCA003BAE40 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/SettingsViewController.storyboard; sourceTree = "<group>"; };
 		F7A0EC36280D9F11001B3D8A /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		F7A0EC38280D9FD8001B3D8A /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
+		F7C0867728607A8500A0BD28 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		F7C0867928607A9000A0BD28 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		F7C38796280EBD5200A17675 /* Bicubik.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bicubik.OTF; sourceTree = "<group>"; };
 		F7C3879A280EC79300A17675 /* Dosis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dosis.ttf; sourceTree = "<group>"; };
+		F7C540AD286C47330085D151 /* GameScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameScreen.storyboard; sourceTree = "<group>"; };
+		F7D9B08E286A498D004847BD /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +70,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79B90A90541837C487EB794 /* Pods_Racing_game.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2825285DAA6C48D4174B596A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFF7D2ACE4800D0ED502F932 /* Pods_Racing_game.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A4D536021177443EA399D54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A55A996F473161F81C172752 /* Pods-Racing game.debug.xcconfig */,
+				15B4C69D693B7BF68D0CCE01 /* Pods-Racing game.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F71DF52F284C87FA0038696F /* Highsrores Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F71DF530284C884B0038696F /* HighscoresViewController.swift */,
+				F71DF534284C8D5E0038696F /* HighscoresTableViewCell.swift */,
+				F71DF532284C88810038696F /* HighscoresViewController.storyboard */,
+			);
+			path = "Highsrores Screen";
+			sourceTree = "<group>";
+		};
 		F73431F1283B966100105E17 /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
+				F799075C286B0BAA007A4260 /* SettingsViewController.storyboard */,
 				F796B985281812B0004E4975 /* SettingsViewController.swift */,
-				F796B98728181BD7004E4975 /* SettingsViewController.storyboard */,
 			);
 			path = "Settings Screen";
 			sourceTree = "<group>";
@@ -67,6 +118,8 @@
 			children = (
 				F7A0EC38280D9FD8001B3D8A /* UIView+Utilities.swift */,
 				F7A0EC36280D9F11001B3D8A /* UIColor+HEX.swift */,
+				F755502528651A2200908CF8 /* UIViewController+Alerts.swift */,
+				F7D9B08E286A498D004847BD /* String+Localizable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -76,6 +129,8 @@
 			children = (
 				F74D19BC27E48A3600CA1B91 /* Racing game */,
 				F74D19BB27E48A3600CA1B91 /* Products */,
+				5A4D536021177443EA399D54 /* Pods */,
+				2825285DAA6C48D4174B596A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,18 +147,28 @@
 			children = (
 				F74D19BD27E48A3600CA1B91 /* AppDelegate.swift */,
 				F74D19BF27E48A3600CA1B91 /* SceneDelegate.swift */,
-				F74D19D327E5D61700CA1B91 /* StartScreen.swift */,
-				F74D19C127E48A3600CA1B91 /* ViewController.swift */,
-				F74D19C327E48A3600CA1B91 /* Main.storyboard */,
-				F740F941281C180D00B3506F /* Results.swift */,
+				F7C540AF286C47EC0085D151 /* Start Screen */,
+				F7C540B0286C48600085D151 /* Gameplay Screen */,
 				F73431F1283B966100105E17 /* Settings Screen */,
+				F71DF52F284C87FA0038696F /* Highsrores Screen */,
+				F7C0867628607A7200A0BD28 /* RealmManager */,
 				F73431F2283B969100105E17 /* Extensions */,
 				F7C38795280EBCF300A17675 /* Resources */,
 				F74D19C627E48A3700CA1B91 /* Assets.xcassets */,
 				F74D19C827E48A3700CA1B91 /* LaunchScreen.storyboard */,
+				F7990758286B0B84007A4260 /* Localizable.strings */,
 				F74D19CB27E48A3700CA1B91 /* Info.plist */,
 			);
 			path = "Racing game";
+			sourceTree = "<group>";
+		};
+		F7C0867628607A7200A0BD28 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				F7C0867728607A8500A0BD28 /* RealmManager.swift */,
+				F7C0867928607A9000A0BD28 /* RealmObjects.swift */,
+			);
+			path = RealmManager;
 			sourceTree = "<group>";
 		};
 		F7C38795280EBCF300A17675 /* Resources */ = {
@@ -115,6 +180,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F7C540AF286C47EC0085D151 /* Start Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F74D19C327E48A3600CA1B91 /* Main.storyboard */,
+				F74D19D327E5D61700CA1B91 /* StartScreen.swift */,
+			);
+			path = "Start Screen";
+			sourceTree = "<group>";
+		};
+		F7C540B0286C48600085D151 /* Gameplay Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F74D19C127E48A3600CA1B91 /* ViewController.swift */,
+				F7C540AD286C47330085D151 /* GameScreen.storyboard */,
+			);
+			path = "Gameplay Screen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F74D19CE27E48A3700CA1B91 /* Build configuration list for PBXNativeTarget "Racing game" */;
 			buildPhases = (
+				231780B00525A59FFFC89038 /* [CP] Check Pods Manifest.lock */,
 				F74D19B627E48A3600CA1B91 /* Sources */,
 				F74D19B727E48A3600CA1B91 /* Frameworks */,
 				F74D19B827E48A3600CA1B91 /* Resources */,
+				8DAC36E1DDAC5D30F65035F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +242,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F74D19B127E48A3600CA1B91;
 			productRefGroup = F74D19BB27E48A3600CA1B91 /* Products */;
@@ -176,13 +262,58 @@
 				F7C3879B280EC79300A17675 /* Dosis.ttf in Resources */,
 				F74D19CA27E48A3700CA1B91 /* LaunchScreen.storyboard in Resources */,
 				F74D19C727E48A3700CA1B91 /* Assets.xcassets in Resources */,
+				F71DF533284C88810038696F /* HighscoresViewController.storyboard in Resources */,
 				F74D19C527E48A3600CA1B91 /* Main.storyboard in Resources */,
-				F796B98828181BD7004E4975 /* SettingsViewController.storyboard in Resources */,
+				F7C540AE286C47330085D151 /* GameScreen.storyboard in Resources */,
+				F7990756286B0B84007A4260 /* Localizable.strings in Resources */,
+				F799075A286B0BAA007A4260 /* SettingsViewController.storyboard in Resources */,
 				F7C38797280EBD5200A17675 /* Bicubik.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		231780B00525A59FFFC89038 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Racing game-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DAC36E1DDAC5D30F65035F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Racing game/Pods-Racing game-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Racing game/Pods-Racing game-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Racing game/Pods-Racing game-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F74D19B627E48A3600CA1B91 /* Sources */ = {
@@ -190,13 +321,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74D19C227E48A3600CA1B91 /* ViewController.swift in Sources */,
+				F7C0867A28607A9000A0BD28 /* RealmObjects.swift in Sources */,
 				F7A0EC37280D9F11001B3D8A /* UIColor+HEX.swift in Sources */,
 				F74D19BE27E48A3600CA1B91 /* AppDelegate.swift in Sources */,
 				F74D19D427E5D61700CA1B91 /* StartScreen.swift in Sources */,
 				F74D19C027E48A3600CA1B91 /* SceneDelegate.swift in Sources */,
-				F740F942281C180D00B3506F /* Results.swift in Sources */,
+				F7C0867828607A8500A0BD28 /* RealmManager.swift in Sources */,
+				F71DF531284C884B0038696F /* HighscoresViewController.swift in Sources */,
+				F71DF535284C8D5E0038696F /* HighscoresTableViewCell.swift in Sources */,
+				F755502628651A2200908CF8 /* UIViewController+Alerts.swift in Sources */,
 				F7A0EC39280D9FD8001B3D8A /* UIView+Utilities.swift in Sources */,
 				F796B986281812B0004E4975 /* SettingsViewController.swift in Sources */,
+				F7D9B08F286A498D004847BD /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +355,25 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F7990758286B0B84007A4260 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7990757286B0B84007A4260 /* en */,
+				F7990759286B0B9A007A4260 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F799075C286B0BAA007A4260 /* SettingsViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F799075B286B0BAA007A4260 /* en */,
+				F79DC49F286B0D81003BAE40 /* Base */,
+				F79DC4A2286B0FCA003BAE40 /* ru */,
+			);
+			name = SettingsViewController.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -226,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -286,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -338,6 +495,7 @@
 		};
 		F74D19CF27E48A3700CA1B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A55A996F473161F81C172752 /* Pods-Racing game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +523,7 @@
 		};
 		F74D19D027E48A3700CA1B91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B4C69D693B7BF68D0CCE01 /* Pods-Racing game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Racing game
+
+  Created by Aliaksandr Miatnikau on 28.06.22.
+  
+*/
+// start screen
+"RACING GAME" = "ГОНКИ";
+"START" = "СТАРТ";
+"Settings" = "Настройки";
+"Highscores" = "Рекорды";
+
+//game over alert
+"GAME OVER" = "АВАРИЯ";
+"Your result: " = "Результат: ";
+"Time " = "Время ";
+", Distance " = ", Дистанция ";
+"Menu" = "Меню";
+"Restart" = "Рестарт";
+
+// game screen labels
+"DISTANCE: " = "ДИСТАНЦИЯ: ";
+"TIME: " = "ВРЕМЯ: ";
+"m" = "м";
+"s" = "c";
+
+
+//highscores
+"Distance: " = "Дистанция: ";
+" Time: " = " Время: ";
+
+"Reset all" = "Стереть все";

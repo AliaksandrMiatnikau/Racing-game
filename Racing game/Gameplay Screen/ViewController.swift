@@ -1,18 +1,21 @@
 
-
+import Foundation
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - Properties
     
     private var viewRoad = UIView()
     private var viewRoadColour: UIColor = .systemGray
     
     private var leftRoadside = UIView()
     private var rightRoadside = UIView()
-    private var roadsideColour: UIColor = .yellow    // roadsides colour
+    private var roadsideColour: UIColor = .yellow  // roadsides colour
     private var roadsideWidthProportion: CGFloat = 7 // value of proportion from superview width
     
-    var roadMark = UIView()
+    private var roadMark = UIView()
     private var roadMark2 = UIView()
     private var roadMark3 = UIView()
     private var roadmarkColour: UIColor = .white     // roadmark colour
@@ -23,7 +26,6 @@ class ViewController: UIViewController {
     
     
     private var imageVehicle = UIImageView()
-    
     private var imageObstruction = UIImageView()
     private var imageObstruction2 = UIImageView()
     private var imageObstruction3 = UIImageView()
@@ -51,38 +53,28 @@ class ViewController: UIViewController {
     private var gameOver: Timer?
     private var timerGameTime: Timer?
     
-    private var labelLeft: UILabel!
-    private var labelRight: UILabel!
-    var userName: String! = "no name"
-    var userDistance: String! = "0"
-    var userTime: String! = "0"
-    var userDate: String! = ""
-    var countSec: Int = 0
+    private var timeLabel: UILabel!
+    private var distanceLabel: UILabel!
+    private var userDistance: Int! = 0
+    private var userTime: String! = ""
+    private var userDate: String! = ""
+    private var countSec: Int = 0
     lazy private var dateFormatter = DateFormatter()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-        
-        
-        
-        //        let animator = UIViewPropertyAnimator(duration: 3, curve: .linear) {
-        //            self..transform = CGAffineTransform(translationX: 0, y: - 500)
-        //
-        //        }
-        //        animator.startAnimation()
-        
         setupGameScreen()
-        //        viewRoadAnimation()
         setGameDifficulty()
         
         intersectionCheckTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(intersectionCheck), userInfo: nil, repeats: true)
         timerGameTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTimeOfGame), userInfo: nil, repeats: true)
+        
     }
+    
+    // MARK: - Set UI methods
     
     private func setupGameScreen() {
         
@@ -112,14 +104,27 @@ class ViewController: UIViewController {
         view.addSubview(rightRoadside)
         
         
-        imageObstruction.image = setObstruction()
-        imageObstruction.frame = CGRect(x: view.bounds.minX + view.bounds.maxX / 4,
+        //        imageObstruction.image = setObstruction()
+        //        imageObstruction.frame = CGRect(x: view.bounds.minX + view.bounds.maxX / 4,
+        //                                        y: view.bounds.minY - 100,
+        //                                        width: 80,
+        //                                        height: 60)
+        
+        
+        
+        
+        imageObstruction.frame = CGRect(x: randomCoordinates(),
                                         y: view.bounds.minY - 100,
                                         width: 80,
                                         height: 60)
+        
+        
         imageObstruction.dropShadow()
         imageObstruction.image = setObstruction()
         view.addSubview(imageObstruction)
+        
+        
+        
         
         
         imageObstruction2.frame = CGRect(x: view.bounds.minX + view.bounds.maxX / 2.5 ,
@@ -129,6 +134,12 @@ class ViewController: UIViewController {
         imageObstruction2.dropShadow()
         imageObstruction2.image = setObstruction()
         view.addSubview(imageObstruction2)
+        
+        
+        //        imageObstruction2.frame = CGRect(x: randomCoordinates(),
+        //                                         y: view.bounds.minY - 100,
+        //                                         width: 70,
+        //                                         height: 55)
         
         
         imageObstruction3.frame = CGRect(x: view.bounds.minX + view.bounds.maxX / 1.5 ,
@@ -198,28 +209,44 @@ class ViewController: UIViewController {
         view.addSubview(imageVehicle)
         
         
-        labelLeft = UILabel()
-        labelLeft.frame = CGRect(x: view.bounds.minX + 70,
-                                 y: view.bounds.minY + 50,
-                                 width: 140,
-                                 height: 100)
-        
-        labelLeft.text = "USER:" + userName
-        labelLeft.textAlignment = .left
-        view.addSubview(labelLeft)
-        
-        labelRight = UILabel()
-        labelRight.frame = CGRect(x: view.bounds.minX + 230,
-                                  y: view.bounds.minY + 50,
-                                  width: 140,
-                                  height: 100)
-        labelRight.textAlignment = .left
-        view.addSubview(labelRight)
+        timeLabel = UILabel()
+        timeLabel.frame = CGRect(x: view.bounds.midX - 60,
+                                 y: view.bounds.minY + 40,
+                                 width: 120,
+                                 height: 30)
+        timeLabel.textAlignment = .center
+        timeLabel.backgroundColor = .white
+        timeLabel.rounded(radius: 10)
+        timeLabel.clipsToBounds = true
+        timeLabel.font = UIFont(name: "Dosis", size: 18)
+        view.addSubview(timeLabel)
         
         
+        
+        distanceLabel = UILabel()
+        distanceLabel.frame = CGRect(x: view.bounds.midX - 90,
+                                     y: view.bounds.minY + 80,
+                                     width: 180,
+                                     height: 30)
+        distanceLabel.textAlignment = .center
+        distanceLabel.backgroundColor = .white
+        distanceLabel.rounded(radius: 10)
+        distanceLabel.clipsToBounds = true
+        distanceLabel.font = UIFont(name: "Dosis", size: 18)
+        view.addSubview(distanceLabel)
         
     }
-    func addRoadmarks (name: UIView) {
+    
+    
+    private func randomCoordinates() -> CGFloat {
+        var position = CGFloat()
+        let leftBorder = view.bounds.maxX / roadsideWidthProportion
+        let rightBorder = view.bounds.maxX - view.bounds.maxX / roadsideWidthProportion - 100
+        position = CGFloat.random(in: (leftBorder...rightBorder))
+        return position
+    }
+    
+    private func addRoadmarks (name: UIView) {
         
         name.frame = CGRect(x: (view.bounds.midX - (view.bounds.maxX / roadmarkWidthProportion) / 2),
                             y: (view.bounds.minY - view.bounds.maxY / roadmarkHeightProportion),
@@ -229,8 +256,9 @@ class ViewController: UIViewController {
         view.addSubview(name)
     }
     
+    // MARK: - Set Images methods
     
-    func setVehicle() -> UIImage {
+    private func setVehicle() -> UIImage {
         var imageTransport = UIImage()
         let speedSegmentedControl = UserDefaults.standard.integer(forKey: "vehicle")
         switch speedSegmentedControl {
@@ -249,7 +277,7 @@ class ViewController: UIViewController {
         return imageTransport
     }
     
-    func setObstruction() -> UIImage {
+    private func setObstruction() -> UIImage {
         var imageAbsraction = UIImage()
         let speedSegmentedControl = UserDefaults.standard.integer(forKey: "obstruction")
         switch speedSegmentedControl {
@@ -264,6 +292,8 @@ class ViewController: UIViewController {
         }
         return imageAbsraction
     }
+    
+    // MARK: - Set movement of  gameplay objects methods
     
     private func setGameDifficulty() {
         let speedSegmentedControl = UserDefaults.standard.integer(forKey: "difficulty")
@@ -280,7 +310,8 @@ class ViewController: UIViewController {
     }
     
     private func easyModeTimer () {
-        timerRoadmark = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(viewRoadAnimation), userInfo: nil, repeats: false)
+        
+        timerRoadmark = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(viewRoadAnimation), userInfo: nil, repeats: true)
         
         timerRoadsideOdject = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideObject), userInfo: nil, repeats: false)
         timerRoadsideOdject2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideObject2), userInfo: nil, repeats: false)
@@ -289,12 +320,13 @@ class ViewController: UIViewController {
         
         //        timerRoadsideDanger = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideDanger), userInfo: nil, repeats: false)
         
-        timerObstruction = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveObstruction), userInfo: nil, repeats: false)
-        timerObstruction2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveObstruction2), userInfo: nil, repeats: false)
+        timerObstruction = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveObstruction), userInfo: nil, repeats: false)
+        timerObstruction2 = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveObstruction2), userInfo: nil, repeats: false)
         //        timerObstruction3 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveObstruction3), userInfo: nil, repeats: false)
     }
     private func mediumModeTimer () {
-        timerRoadmark = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(viewRoadAnimation), userInfo: nil, repeats: false)
+        
+        timerRoadmark = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(viewRoadAnimation), userInfo: nil, repeats: true)
         
         timerRoadsideOdject = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideObject), userInfo: nil, repeats: false)
         timerRoadsideOdject2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideObject2), userInfo: nil, repeats: false)
@@ -308,7 +340,9 @@ class ViewController: UIViewController {
         //        timerObstruction3 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveObstruction3), userInfo: nil, repeats: false)
     }
     private func hardModeTimer () {
-        timerRoadmark = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(viewRoadAnimation), userInfo: nil, repeats: false)
+        
+        
+        timerRoadmark = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(viewRoadAnimation), userInfo: nil, repeats: true)
         
         timerRoadsideOdject = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideObject), userInfo: nil, repeats: false)
         timerRoadsideOdject2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveRoadsideObject2), userInfo: nil, repeats: false)
@@ -321,56 +355,69 @@ class ViewController: UIViewController {
         timerObstruction2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveObstruction2), userInfo: nil, repeats: false)
         timerObstruction3 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveObstruction3), userInfo: nil, repeats: false)
     }
-    private func setResultDate () {
-        let time = NSDate()
+    // MARK: - Saving results methods
+    
+    private func setResultDate () -> String {
+        let time = Date()
         dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.YYYY HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY HH:mm"
         userDate = dateFormatter.string(from: time as Date)
-        
+        return userDate
     }
     
-    private func saveResults() {
-        let user = Results(name: userName, time: userTime, distance: userDistance, date: userDate)
-        let data = try? JSONEncoder().encode(user)
-        UserDefaults.standard.set(data, forKey: "someUser")
+    private func saveResult() {
+        let result = SavedResult(time: userTime, distance: userDistance, date: setResultDate())
+        RealmManager.shared.writeResult(result: result)
+        
     }
-    private func showResults() {
-        let savedData = UserDefaults.standard.value(forKey: "someUser")
-        if let savedData = savedData as? Data {
-            let savedUser = try? JSONDecoder().decode(Results.self, from: savedData)
-            print(savedUser)
+    // MARK: - @objc methods
+    
+    @objc private func stopAction () {
+        
+        saveResult()
+        let result = SavedResult(time: userTime, distance: userDistance, date: setResultDate())
+        
+        UIView.animate(withDuration: 1, delay: 0.1, options: .curveLinear) {
             
+            self.imageVehicle.removeFromSuperview()
+            self.imageObstruction.removeFromSuperview()
+            self.imageObstruction2.removeFromSuperview()
+            self.imageObstruction3.removeFromSuperview()
+            self.roadsideDanger.removeFromSuperview()
+            self.leftRoadside.removeFromSuperview()
+            self.rightRoadside.removeFromSuperview()
+            self.roadsideOdject.removeFromSuperview()
+            self.roadsideOdject2.removeFromSuperview()
+            self.roadsideOdject3.removeFromSuperview()
+            self.roadsideObject4.removeFromSuperview()
+            self.timeLabel.removeFromSuperview()
+            self.distanceLabel.removeFromSuperview()
+            self.roadMark.removeFromSuperview()
+            self.roadMark2.removeFromSuperview()
+            self.roadMark3.removeFromSuperview()
+            UIView.animate(withDuration: 3, delay: 0, options: [.curveEaseOut]) {
+                self.boom.transform = CGAffineTransform(scaleX: 80, y: 80)
+            }
+            
+        } completion: { _ in
+            self.showAlert(title: "GAME OVER".localized(), text: "Your result: ".localized() + "Time ".localized() + result.time + ", Distance ".localized() + String(result.distance))
         }
     }
     
-    @objc private func stopAction () {
-        self.dismiss(animated: true)
-        setResultDate()
-        saveResults()
-        
-//                showResults()
-        //        print(userName, userDistance, userTime, userDate)
-    }
-    
-    @objc private func viewRoadAnimation() {
+    @objc private func viewRoadAnimation () {
         
         UIView.animate(withDuration: 3, delay: 0, options: [.repeat, .curveLinear]) {
             self.roadMark.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + self.roadMark.bounds.maxY)
-        } completion: { _ in
-            self.roadMark.transform = .identity
         }
         
         UIView.animate(withDuration: 3, delay: 1, options: [ .repeat, .curveLinear]) {
             self.roadMark2.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + self.roadMark2.bounds.maxY)
-        } completion: { _ in
-            self.roadMark2.transform = .identity
         }
         
         UIView.animate(withDuration: 3, delay: 2, options: [ .repeat, .curveLinear]) {
             self.roadMark3.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.maxY + self.roadMark3.bounds.maxY)
-        } completion: { _ in
-            self.roadMark3.transform = .identity
         }
+        
     }
     @objc private func moveCarLeft() {
         
@@ -455,14 +502,16 @@ class ViewController: UIViewController {
     @objc private func countTimeOfGame() {
         countSec += 1
         userTime = String(countSec)
-        userDistance = String(countSec * 25)
+        userDistance = countSec * 25
         
         guard let time = userTime,
               let distance = userDistance
         else {
             return
         }
-        labelRight.text = time + "sec.," + distance + "met."
+        distanceLabel.text =  "DISTANCE: ".localized() + String(distance) + "m".localized()
+        timeLabel.text = "TIME: ".localized() + String(time) + "s".localized()
+        
     }
     @objc private func intersectionCheck() {
         guard       let imageCar = self.imageVehicle.layer.presentation(),
@@ -476,7 +525,6 @@ class ViewController: UIViewController {
             return
         }
         
-        
         if  imageStone.frame.intersects(imageCar.frame.insetBy(dx: 20, dy: 5)) ||
                 imageStone1.frame.intersects(imageCar.frame.insetBy(dx: 20, dy: 5)) ||
                 imageStone2.frame.intersects(imageCar.frame.insetBy(dx: 20, dy: 5)) ||
@@ -484,8 +532,8 @@ class ViewController: UIViewController {
                 imageRoadside.frame.intersects(imageCar.frame.insetBy(dx: 20, dy: 5)) ||
                 imageRoadside2.frame.intersects(imageCar.frame.insetBy(dx: 20, dy: 5))
         {
-            boom.frame = CGRect(x: imageCar.frame.origin.x,
-                                y: imageVehicle.frame.origin.y - 30 ,
+            boom.frame = CGRect(x: imageCar.frame.origin.x - 30,
+                                y: imageCar.frame.origin.y - 40 ,
                                 width: self.imageVehicle.frame.width + 90,
                                 height: self.imageVehicle.frame.height + 70)
             view.addSubview(boom)
@@ -495,15 +543,6 @@ class ViewController: UIViewController {
             imageObstruction2.removeFromSuperview()
             imageObstruction3.removeFromSuperview()
             roadsideDanger.removeFromSuperview()
-            //            roadMark.removeFromSuperview()
-            //            roadMark2.removeFromSuperview()
-            //            roadMark3.removeFromSuperview()
-            //            roadsideOdject.removeFromSuperview()
-            //            roadsideOdject2.removeFromSuperview()
-            //            roadsideOdject3.removeFromSuperview()
-            //            roadsideObject4.removeFromSuperview()
-            
-            
             
             intersectionCheckTimer?.invalidate()
             
@@ -514,8 +553,7 @@ class ViewController: UIViewController {
             timerRoadsideOdject4?.invalidate()
             timerRoadsideDanger?.invalidate()
             
-            gameOver = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(stopAction), userInfo: nil, repeats: false)
-            
+            gameOver = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(stopAction), userInfo: nil, repeats: false)
         }
     }
 }
