@@ -3,13 +3,20 @@
 import UIKit
 
 
+
 public class SettingsViewController: UIViewController {
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var vehicleTypeUI: UISegmentedControl!
     @IBOutlet weak var obstructionTypeUI: UISegmentedControl!
     @IBOutlet weak var speedTypeUI: UISegmentedControl!
-    @IBOutlet weak var userNameTextField: UITextField!
-   
+    
+    // MARK: - Properties
+    
+    private let settingsLabel = UILabel()
+    
+    // MARK: - Set segment control UserDefaults
     
     @IBAction func vehicleType(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -48,43 +55,26 @@ public class SettingsViewController: UIViewController {
         }
     }
     
-    private var user: Results!
-    let onSaveButton = UIButton()
-    
-    @IBAction func onSaveButton(_ sender: Any) {
-        
-        let vc = ViewController()
-        vc.userName = userNameTextField.text!
-        UserDefaults.standard.set(vc.userName, forKey: "userName")
-        self.dismiss(animated: true)
-//        print(userNameTextField.text)
-//        userNameTextField.resignFirstResponder()
-        
-//        guard   let userName = userNameTextField.text
-////            let userDistance = vc.userDistance,
-////            let userTime = vc.userTime,
-////            let date = vc.userDate
-//
-//        else { return }
-
-//        user = Results(name: userName, time: userTime, distance: userDistance, date: date)
-//        UserDefaults.standard.set(user, forKey: "ResultKey")
-    }
-   
-    
     override public func viewDidLoad() {
         super.viewDidLoad()
-
         
-         view.backgroundColor = .systemGray
-        
+        setSettingsLabel()
+        view.backgroundColor = .systemYellow
+        view.rounded(radius: 30)
         vehicleTypeUI.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "vehicle")
         obstructionTypeUI.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "obstruction")
         speedTypeUI.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "difficulty")
-        
     }
-   
-
     
+    // MARK: - Set UI
+    
+    private func setSettingsLabel() {
+        settingsLabel.frame = CGRect(x: view.bounds.midX - 150, y: view.bounds.minY + 10, width: 300, height: 80)
+        settingsLabel.clipsToBounds = true
+        settingsLabel.font = UIFont(name: "Bicubik", size: 30)
+        settingsLabel.text = "Settings".localized()
+        settingsLabel.textAlignment = .center
+        view.addSubview(settingsLabel)
+    }
 }
 

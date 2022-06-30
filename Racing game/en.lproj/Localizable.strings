@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Racing game
+
+  Created by Aliaksandr Miatnikau on 28.06.22.
+  
+*/
+// start screen
+"RACING GAME" = "RACING GAME";
+"START" = "START";
+"Settings" = "Settings";
+"Highscores" = "Highscores";
+
+//game over alert
+"GAME OVER" = "GAME OVER";
+"Your result: " = "Your result: ";
+"Time " = "Time ";
+", Distance " = ", Distance ";
+"Menu" = "Menu";
+"Restart" = "Restart";
+
+// game screen labels
+"DISTANCE: " = "DISTANCE: ";
+"TIME: " = "TIME: ";
+"m" = "m";
+"s" = "s";
+
+//highscores
+"Distance: " = "Distance: ";
+" Time: " = " Time: ";
+
+"Reset all" = "Reset all";

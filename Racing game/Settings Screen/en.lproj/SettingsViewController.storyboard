@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="SettingsViewController" customModule="Racing_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-eY-dYB">
+                                <rect key="frame" x="194" y="193.5" width="170" height="32"/>
+                                <segments>
+                                    <segment title="Sport"/>
+                                    <segment title="Police"/>
+                                    <segment title="Truck"/>
+                                </segments>
+                                <connections>
+                                    <action selector="vehicleType:" destination="Y6W-OH-hqX" eventType="valueChanged" id="G6D-8S-8WD"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0l-1Y-SWN">
+                                <rect key="frame" x="20" y="194" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JuE-xh-CXJ"/>
+                                    <constraint firstAttribute="width" constant="70" id="cC4-ta-lY1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fdT-SM-ZjV">
+                                <rect key="frame" x="191.5" y="296.5" width="175" height="32"/>
+                                <segments>
+                                    <segment title="Stones"/>
+                                    <segment title="Blockposts"/>
+                                </segments>
+                                <connections>
+                                    <action selector="obstructionType:" destination="Y6W-OH-hqX" eventType="valueChanged" id="g5s-1o-btb"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obstruction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB4-Mo-Orr">
+                                <rect key="frame" x="20" y="297" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Lid-5N-DLQ"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="130" id="PVP-U1-Gfp"/>
+                                    <constraint firstAttribute="height" constant="30" id="ysq-ey-Yce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vSN-hk-JRj">
+                                <rect key="frame" x="176" y="399.5" width="206" height="32"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <connections>
+                                    <action selector="gameSpeed:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Wc6-pI-yiS"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-Ng-UTq">
+                                <rect key="frame" x="20" y="400" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="130" id="7z8-fB-e5G"/>
+                                    <constraint firstAttribute="height" constant="30" id="dci-Mz-25K"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="w2v-8J-c0U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fdT-SM-ZjV" firstAttribute="centerX" secondItem="1Rv-eY-dYB" secondAttribute="centerX" id="11U-HC-Zti"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Rv-eY-dYB" secondAttribute="trailing" constant="50" id="2XZ-3L-2Ct"/>
+                            <constraint firstItem="fdT-SM-ZjV" firstAttribute="centerY" secondItem="yB4-Mo-Orr" secondAttribute="centerY" id="5wf-Ug-quc"/>
+                            <constraint firstItem="vSN-hk-JRj" firstAttribute="centerX" secondItem="1Rv-eY-dYB" secondAttribute="centerX" id="7YN-1V-z9N"/>
+                            <constraint firstItem="yB4-Mo-Orr" firstAttribute="leading" secondItem="u0l-1Y-SWN" secondAttribute="leading" id="8wB-O5-7Fl"/>
+                            <constraint firstItem="u0l-1Y-SWN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Nz8-fo-qJa"/>
+                            <constraint firstItem="WAz-Ng-UTq" firstAttribute="leading" secondItem="u0l-1Y-SWN" secondAttribute="leading" id="QRf-94-Tsq"/>
+                            <constraint firstItem="u0l-1Y-SWN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="150" id="XrX-Nn-4Rh"/>
+                            <constraint firstItem="yB4-Mo-Orr" firstAttribute="top" secondItem="u0l-1Y-SWN" secondAttribute="bottom" constant="73" id="c0B-uB-i7m"/>
+                            <constraint firstItem="WAz-Ng-UTq" firstAttribute="top" secondItem="yB4-Mo-Orr" secondAttribute="bottom" constant="73" id="h1b-gX-WtI"/>
+                            <constraint firstItem="1Rv-eY-dYB" firstAttribute="centerY" secondItem="u0l-1Y-SWN" secondAttribute="centerY" id="qgd-YH-poI"/>
+                            <constraint firstItem="vSN-hk-JRj" firstAttribute="centerY" secondItem="WAz-Ng-UTq" secondAttribute="centerY" id="wsI-v6-1mE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bYe-0t-n86"/>
+                    <connections>
+                        <outlet property="obstructionTypeUI" destination="fdT-SM-ZjV" id="mQe-Dz-jNA"/>
+                        <outlet property="speedTypeUI" destination="vSN-hk-JRj" id="3jO-cw-2pl"/>
+                        <outlet property="vehicleTypeUI" destination="1Rv-eY-dYB" id="RAM-4a-yxb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="76"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

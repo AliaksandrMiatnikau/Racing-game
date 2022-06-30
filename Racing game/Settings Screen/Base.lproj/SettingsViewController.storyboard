@@ -11,7 +11,7 @@
         <!--Settings View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="SettingsViewController" customModule="Racing_game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SettingsViewController" customModule="Racing_game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,26 +80,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Jf-Qz-Lr4">
-                                <rect key="frame" x="30" y="124" width="354" height="24.5"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="hpB-Wi-Jge"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obH-Kg-ccF">
-                                <rect key="frame" x="167" y="480.5" width="80" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="IRx-RB-2ZG"/>
-                                    <constraint firstAttribute="height" constant="31" id="PCO-vy-0Tm"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                <connections>
-                                    <action selector="onSaveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="noM-mC-euw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,25 +90,18 @@
                             <constraint firstItem="fdT-SM-ZjV" firstAttribute="centerY" secondItem="yB4-Mo-Orr" secondAttribute="centerY" id="5wf-Ug-quc"/>
                             <constraint firstItem="yB4-Mo-Orr" firstAttribute="centerX" secondItem="u0l-1Y-SWN" secondAttribute="centerX" id="6yh-64-Bba"/>
                             <constraint firstItem="vSN-hk-JRj" firstAttribute="centerX" secondItem="1Rv-eY-dYB" secondAttribute="centerX" id="7YN-1V-z9N"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Jf-Qz-Lr4" secondAttribute="trailing" constant="30" id="Ast-oE-l4f"/>
-                            <constraint firstItem="1Rv-eY-dYB" firstAttribute="top" secondItem="2Jf-Qz-Lr4" secondAttribute="bottom" constant="45" id="Fb8-ol-5h4"/>
-                            <constraint firstItem="2Jf-Qz-Lr4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="LpR-zN-5iv"/>
                             <constraint firstItem="u0l-1Y-SWN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Nz8-fo-qJa"/>
-                            <constraint firstItem="obH-Kg-ccF" firstAttribute="top" secondItem="vSN-hk-JRj" secondAttribute="bottom" constant="50" id="QoI-Uo-hXX"/>
                             <constraint firstItem="u0l-1Y-SWN" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="150" id="XrX-Nn-4Rh"/>
                             <constraint firstItem="yB4-Mo-Orr" firstAttribute="top" secondItem="u0l-1Y-SWN" secondAttribute="bottom" constant="73" id="c0B-uB-i7m"/>
                             <constraint firstItem="WAz-Ng-UTq" firstAttribute="top" secondItem="yB4-Mo-Orr" secondAttribute="bottom" constant="73" id="h1b-gX-WtI"/>
-                            <constraint firstItem="obH-Kg-ccF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qFG-Lo-JpM"/>
                             <constraint firstItem="1Rv-eY-dYB" firstAttribute="centerY" secondItem="u0l-1Y-SWN" secondAttribute="centerY" id="qgd-YH-poI"/>
                             <constraint firstItem="vSN-hk-JRj" firstAttribute="centerY" secondItem="WAz-Ng-UTq" secondAttribute="centerY" id="wsI-v6-1mE"/>
-                            <constraint firstItem="2Jf-Qz-Lr4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="zwj-m1-4dz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bYe-0t-n86"/>
                     <connections>
                         <outlet property="obstructionTypeUI" destination="fdT-SM-ZjV" id="mQe-Dz-jNA"/>
                         <outlet property="speedTypeUI" destination="vSN-hk-JRj" id="3jO-cw-2pl"/>
-                        <outlet property="userNameTextField" destination="2Jf-Qz-Lr4" id="GP2-HC-hSw"/>
                         <outlet property="vehicleTypeUI" destination="1Rv-eY-dYB" id="RAM-4a-yxb"/>
                     </connections>
                 </viewController>
